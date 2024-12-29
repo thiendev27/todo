@@ -1,0 +1,113 @@
+:root {
+  --text: #48dbfb;
+  --bg: #222f3e;
+  --disable: #017c96;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg);
+}
+
+* {
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+h1 {
+  margin-top: 50px;
+  font-size: 10vmin;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  * {
+    font-size: 4vmin;
+  }
+  width: 90vmin;
+  height: 80vh;
+  div {
+    display: flex;
+    gap: 2.7vmin;
+    input {
+      width: 0;
+      flex-grow: 1;
+    }
+    button {
+      flex-shrink: 0;
+    }
+    * {
+      background-color: transparent;
+      border: 0.5vmin solid var(--text);
+      padding: 2.7vmin;
+      border-radius: 5.4vmin;
+      box-sizing: border-box;
+    }
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5vmin;
+  flex-grow: 1;
+  overflow-y: scroll;
+  li {
+    display: flex;
+    align-items: center;
+    gap: 2vmin;
+    padding: 2.7vmin;
+    border: 0.5vmin solid var(--text);
+    border-radius: 5.4vmin;
+  }
+  li button {
+    flex-shrink: 0;
+    width: 8vmin;
+    height: 8vmin;
+    background-color: transparent;
+    border: 0.5vmin dashed var(--text);
+    border-radius: 2.7vmin;
+  }
+  li label {
+    display: flex;
+    flex-grow: 1;
+  }
+  li input {
+    display: none;
+  }
+  li label span {
+    word-break: break-word;
+  }
+  li input:checked + label span {
+    text-decoration: line-through;
+    text-decoration-color: var(--text);
+    color: var(--disable);
+  }
+  li label::before {
+    content: "";
+    flex-shrink: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    justify-content: center;
+    color: var(--bg);
+    align-items: center;
+    margin-right: 2vmin;
+    width: 5vmin;
+    height: 5vmin;
+    border: 0.5vmin solid var(--text);
+    border-radius: 100%;
+    transition: all 0.1s;
+  }
+  li input {
+    display: none;
+  }
+  li input:checked + label::before {
+    background-color: var(--text);
+    content: "✓";
+  }
+}
